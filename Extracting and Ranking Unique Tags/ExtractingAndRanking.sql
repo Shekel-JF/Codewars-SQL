@@ -5,11 +5,8 @@ SELECT
 FROM
 (
   SELECT
-    user_id, 
     UNNEST(STRING_TO_ARRAY(tags, ',')) AS tag
   FROM user_tags
 ) AS smth
 GROUP BY
   tag
-ORDER BY
-  tag_rank
